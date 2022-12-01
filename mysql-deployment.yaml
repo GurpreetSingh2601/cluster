@@ -50,8 +50,6 @@ spec:
               name: my-dbs
             - mountPath: /data/application/mysql_init.sql
               name: mysql-claim1
-            - name: mysql-initdb
-              mountPath: /docker-entrypoint-initdb.d
       restartPolicy: Always
       volumes:
         - name: my-dbs
@@ -60,7 +58,5 @@ spec:
         - name: mysql-claim1
           persistentVolumeClaim:
             claimName: mysql-claim1
-        - name: mysql-initdb
-          configMap:
-            name: mysql-initdb-config
+
 status: {}
