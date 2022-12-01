@@ -10,6 +10,7 @@ metadata:
   name: mysql
 spec:
   type: LoadBalancer
+  loadBalancerIP: 127.19.11.1
   ports:
     - name: "3306"
       port: 3306
