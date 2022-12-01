@@ -10,7 +10,7 @@ metadata:
   name: mongodb
 spec:
   type: LoadBalancer
-  loadBalancerIP: 127.19.11.1
+  loadBalancerIP: 34.135.63.240
   ports:
     - name: "27017"
       port: 27017

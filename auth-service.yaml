@@ -10,7 +10,7 @@ metadata:
   name: auth
 spec:
   type: LoadBalancer
-  loadBalancerIP: 127.19.11.1
+  loadBalancerIP: 34.135.63.240
   ports:
     - name: "3000"
       port: 3000

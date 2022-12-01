@@ -10,7 +10,7 @@ metadata:
   name: analytics-app
 spec:
   type: LoadBalancer
-  loadBalancerIP: 127.19.11.1
+  loadBalancerIP: 34.135.63.240
   ports:
     - name: "8080"
       port: 8080
