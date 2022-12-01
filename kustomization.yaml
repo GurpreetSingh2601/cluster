@@ -7,7 +7,6 @@ resources:
   - data-service.yaml
   - front-service.yaml
   - mongodb-service.yaml
-  - mysql-service.yaml
   - analytics-app-deployment.yaml
   - auth-deployment.yaml
   - data-deployment.yaml
@@ -15,8 +14,7 @@ resources:
   - mongodb-deployment.yaml
   - mysql-configmap.yml
   - my-dbs-persistentvolumeclaim.yaml
-  - mysql-deployment.yaml
-  - mysql-claim1-persistentvolumeclaim.yaml
+  - mysql-deployment-new.yaml
+  - mysql-pv-new.yaml
 
 
-  
