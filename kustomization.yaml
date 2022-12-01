@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - analytics-app-service.yaml
+  - auth-service.yaml
+  - data-service.yaml
+  - front-service.yaml
+  - mongodb-service.yaml
+  - mysql-service.yaml
+  - analytics-app-deployment.yaml
+  - auth-deployment.yaml
+  - data-deployment.yaml
+  - front-deployment.yaml
+  - mongodb-deployment.yaml
+  - mysql-configmap.yml
+  - my-dbs-persistentvolumeclaim.yaml
+  - mysql-deployment.yaml
+  - mysql-claim1-persistentvolumeclaim.yaml
+
+
+  

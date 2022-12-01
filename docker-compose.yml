@@ -1,0 +1,77 @@
+version: '3.3'
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: group10
+      MYSQL_USER: backend
+      MYSQL_DATABASE: project
+      MYSQL_PASSWORD: group10
+    ports:
+      - "3306:3306"
+    command: --init-file /data/application/mysql_init.sql
+    volumes:
+      - my-dbs:/var/lib/mysql
+     # - prj-mysql-data:/var/lib/mysql
+      - .\mysql_init.sql:/data/application/mysql_init.sql
+  
+  mongodb:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: group10
+      MONGO_INITDB_DATABASE: project
+      MYSQL_USER: backend
+      MYSQL_DATABASE: project
+      MYSQL_PASSWORD: group10
+    ports:
+      - 27017:27017
+    volumes:
+      - my-dbs:/var/lib/mysql
+      #- prj-mongodb-data:/data/db
+  
+  analytics-app:
+    image: a01201759/week5:analytics
+    restart: always
+    command: python3 /analytics-app/app.py
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+      - mongodb
+  
+  front:
+    image: a01201759/week5:front
+    restart: always
+    build: .
+    ports:
+      - 3001:3001
+    depends_on:
+      - mysql
+      - mongodb
+  
+  auth:
+    image: a01201759/week5:auth
+    restart: always
+    build: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql
+      - mongodb
+
+  data:
+    image: a01201759/week5:data
+    restart: always
+    build: .
+    ports:
+      - 3002:3002
+    depends_on:
+      - mysql
+      - mongodb
+
+volumes:
+  prj-mysql-data:
+  prj-mongodb-data:
+  my-dbs:
