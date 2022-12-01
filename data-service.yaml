@@ -10,7 +10,6 @@ metadata:
   name: data
 spec:
   type: LoadBalancer
-  loadBalancerIP: 34.135.63.240
   ports:
     - name: "3002"
       port: 3002

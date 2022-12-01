@@ -10,7 +10,6 @@ metadata:
   name: front
 spec:
   type: LoadBalancer
-  loadBalancerIP: 34.135.63.240
   ports:
     - name: "3001"
       port: 3001
